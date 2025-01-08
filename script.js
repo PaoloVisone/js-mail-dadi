@@ -8,22 +8,27 @@ let userMail = (prompt("Email"))
 
 // Controllo email
 
+let found = false;
+
 // Cicla l'array
-for (let i = 0; i <= 6; i++) {
+for (let i = 0; i < mail.length; i++) {
 
     // Se è ugale
     if (userMail === mail[i]) {
-        console.log("BUONE FESTE!");
-    }
-    // Se non ha inserito nulla 
-    else if (userMail === '') {
-        alert("Devi indicare un indirizzo email");
-    }
-    // Se è diversa
-    else {
-        console.log("EMAIL NON IN LISTA");
+        found = true;
     }
 }
+
+// Se non ha inserito nulla 
+if (userMail === '') {
+    alert("Devi indicare un indirizzo email");
+}// Se è diversa
+else if (!found) {
+    console.log("EMAIL NON IN LISTA");
+} else {
+    console.log(userMail, "Buone feste!");
+}
+
 
 // EX-DADI
 
